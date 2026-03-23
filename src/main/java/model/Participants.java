@@ -3,11 +3,11 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameResult {
+public class Participants {
 
     private List<Participant> participantsBettingResults;
 
-    public GameResult() {
+    public Participants() {
         participantsBettingResults = new ArrayList<>();
     }
 

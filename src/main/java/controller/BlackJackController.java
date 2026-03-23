@@ -5,7 +5,7 @@ import model.BettingCalculator;
 import model.CardDispenser;
 import model.Cards;
 import model.Dealer;
-import model.GameResult;
+import model.Participants;
 import model.Player;
 import model.Players;
 import view.InputView;
@@ -40,8 +40,8 @@ public class BlackJackController {
 
     private void finishGame(BlackJackGame game) {
         printFinalCards(game);
-        GameResult result = game.finish();
-        printResult(result);
+        Participants participants = game.finish();
+        printResult(participants);
     }
 
     private void printInitialCards(BlackJackGame game) {
@@ -65,7 +65,7 @@ public class BlackJackController {
         OutputView.printCardByPlayerWithScore(player, player.calculateTotalScore());
     }
 
-    private void printResult(GameResult result) {
+    private void printResult(Participants result) {
         OutputView.printBettingResultHeader();
         OutputView.printBettingResult(result.getParticipantsBettingResults());
     }

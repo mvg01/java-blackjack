@@ -2,7 +2,7 @@ package controller;
 
 import model.BettingCalculator;
 import model.Dealer;
-import model.GameResult;
+import model.Participants;
 import model.Players;
 
 public class BlackJackGame {
@@ -24,7 +24,7 @@ public class BlackJackGame {
         round.playDealer();
     }
 
-    public GameResult finish() {
+    public Participants finish() {
         return bettingCalculator.calculateBettingMoney(round.dealer(), round.players());
     }
 

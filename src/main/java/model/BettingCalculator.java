@@ -6,21 +6,21 @@ public class BettingCalculator {
 
     private final int BLACK_JACK = 21;
     private final double BLACK_JACK_WIN_PRICE = 0.5;
-    GameResult gameResult;
+    Participants participants;
 
     public BettingCalculator() {
-        gameResult = new GameResult();
+        participants = new Participants();
     }
 
-    public GameResult calculateBettingMoney(Dealer dealer, Players players) {
+    public Participants calculateBettingMoney(Dealer dealer, Players players) {
         int dealerScore = dealer.calculateTotalScore();
-        gameResult.addParticipant(dealer);
+        participants.addParticipant(dealer);
         List<Player> list = players.players();
         for (Player player : list) {
             resolveBettingResult(dealerScore, player, dealer);
-            gameResult.addParticipant(player);
+            participants.addParticipant(player);
         }
-        return gameResult;
+        return participants;
     }
 
     private void resolveBettingResult(int dealerScore, Player player, Dealer dealer) {
