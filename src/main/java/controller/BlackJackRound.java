@@ -15,10 +15,6 @@ public class BlackJackRound {
         this.cardDispenser = cardDispenser;
     }
 
-    public void betPlayers() {
-        players.bet();
-    }
-
     public void initialDeal() {
         cardDispenser.dispenseStartingCards(dealer);
         players.receiveStartingCards(cardDispenser);

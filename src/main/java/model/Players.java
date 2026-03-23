@@ -19,12 +19,6 @@ public class Players {
                 .toList());
     }
 
-    public void bet() {
-        for (Player player : players) {
-            player.betMoney(InputView.readPlayerBettingMoney(player.name()));
-        }
-    }
-
     public void receiveStartingCards(CardDispenser cardDispenser) {
         for (Player player : players) {
             cardDispenser.dispenseStartingCards(player);

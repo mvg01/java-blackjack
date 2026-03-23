@@ -3,7 +3,9 @@ package controller;
 import model.BettingCalculator;
 import model.Dealer;
 import model.Participants;
+import model.Player;
 import model.Players;
+import view.InputView;
 
 public class BlackJackGame {
     private final BlackJackRound round;
@@ -15,7 +17,9 @@ public class BlackJackGame {
     }
 
     public void prepare() {
-        round.betPlayers();
+        for (Player player : round.players().players()) {
+            player.betMoney(InputView.readPlayerBettingMoney(player.name()));
+        }
         round.initialDeal();
     }
 
