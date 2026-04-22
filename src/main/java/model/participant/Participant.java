@@ -5,11 +5,7 @@ import model.card.Card;
 
 public interface Participant {
 
-    int calculateTotalScore();
-
     void addCard(Card card);
-
-    boolean canHit();
 
     String name();
 

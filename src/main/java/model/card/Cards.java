@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cards {
-
+    private static final int ACE_BONUS_SCORE = 10;
+    private static final int BUST_LIMIT = 21;
     private final List<Card> cards;
 
     public Cards(List<Card> cards) {
@@ -25,6 +26,17 @@ public class Cards {
 
     public int size() {
         return cards.size();
+    }
+
+    public int calculateTotalScore() {
+        int score = calculateScore();
+        int aceCount = countAce();
+
+        while (aceCount > 0 && score + ACE_BONUS_SCORE <= BUST_LIMIT) {
+            score += ACE_BONUS_SCORE;
+            aceCount--;
+        }
+        return score;
     }
 
     public int calculateScore() {
