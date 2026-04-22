@@ -26,11 +26,6 @@ public class Hit extends Running {
         return new Hit(cards);
     }
 
-    @Override
-    public State stay() {
-        return new Stay(cards);
-    }
-
     private boolean isBust() {
         return cards.calculateTotalScore() > BLACK_JACK_SCORE;
     }

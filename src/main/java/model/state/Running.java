@@ -19,9 +19,4 @@ public abstract class Running implements State {
     public Cards cards() {
         return cards;
     }
-
-    @Override
-    public double profit(double money) {
-        throw new IllegalStateException();
-    }
 }
