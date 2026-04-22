@@ -1,4 +1,4 @@
-package model;
+package model.betting;
 
 public class BettingMoney {
     private static final long MIN_BETTING_MONEY = 100;

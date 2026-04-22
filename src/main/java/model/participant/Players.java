@@ -1,8 +1,9 @@
-package model;
+package model.participant;
 
 import controller.Continuation;
 import java.util.ArrayList;
 import java.util.List;
+import model.CardDispenser;
 import view.InputView;
 import view.OutputView;
 

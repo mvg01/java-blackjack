@@ -5,7 +5,7 @@ import static view.reader.Console.readLine;
 import controller.Continuation;
 import java.util.Arrays;
 import java.util.List;
-import model.BettingMoney;
+import model.betting.BettingMoney;
 
 public class InputView {
     private static final long BETTING_UNIT = 100;

@@ -1,4 +1,4 @@
-package model;
+package model.card;
 
 public enum CardShape {
     DIAMOND("다이아몬드"),

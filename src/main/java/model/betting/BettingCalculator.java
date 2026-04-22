@@ -1,6 +1,10 @@
-package model;
+package model.betting;
 
 import java.util.List;
+import model.participant.Dealer;
+import model.participant.Participants;
+import model.participant.Player;
+import model.participant.Players;
 
 public class BettingCalculator {
 

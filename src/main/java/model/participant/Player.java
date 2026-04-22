@@ -1,4 +1,6 @@
-package model;
+package model.participant;
+
+import model.betting.BettingMoney;
 
 public class Player extends AbstractParticipant {
 

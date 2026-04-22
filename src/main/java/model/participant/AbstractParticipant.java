@@ -1,6 +1,8 @@
-package model;
+package model.participant;
 
 import java.util.List;
+import model.card.Card;
+import model.card.Cards;
 
 public abstract class AbstractParticipant implements Participant {
     private static final int BUST_LIMIT = 21;

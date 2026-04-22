@@ -2,6 +2,10 @@ package model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import model.card.Card;
+import model.card.CardShape;
+import model.card.CardValue;
+import model.participant.Player;
 import org.junit.jupiter.api.Test;
 
 public class PlayerBustTest {

@@ -1,4 +1,4 @@
-package model;
+package model.card;
 
 public record Card(CardShape shape, CardValue value) {
 

@@ -1,5 +1,8 @@
 package model;
 
+import model.card.Cards;
+import model.participant.Participant;
+
 public class CardDispenser {
 
     private static final int START_CARD_NUMBER = 2;

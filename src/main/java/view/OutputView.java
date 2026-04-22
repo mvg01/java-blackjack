@@ -1,12 +1,12 @@
 package view;
 
 import java.util.List;
-import model.AbstractParticipant;
-import model.Card;
-import model.Dealer;
-import model.Participant;
-import model.Player;
-import model.Players;
+import model.card.Card;
+import model.participant.AbstractParticipant;
+import model.participant.Dealer;
+import model.participant.Participant;
+import model.participant.Player;
+import model.participant.Players;
 
 public class OutputView {
 

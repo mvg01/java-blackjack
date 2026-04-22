@@ -1,10 +1,10 @@
 package controller;
 
-import model.BettingCalculator;
-import model.Dealer;
-import model.Participants;
-import model.Player;
-import model.Players;
+import model.betting.BettingCalculator;
+import model.participant.Dealer;
+import model.participant.Participants;
+import model.participant.Player;
+import model.participant.Players;
 import view.InputView;
 
 public class BlackJackGame {

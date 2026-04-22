@@ -3,6 +3,10 @@ package model;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
+import model.card.Card;
+import model.card.CardShape;
+import model.card.CardValue;
+import model.card.Cards;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;

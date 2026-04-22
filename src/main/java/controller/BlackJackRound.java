@@ -1,8 +1,8 @@
 package controller;
 
 import model.CardDispenser;
-import model.Dealer;
-import model.Players;
+import model.participant.Dealer;
+import model.participant.Players;
 
 public class BlackJackRound {
     private final Dealer dealer;

@@ -1,13 +1,13 @@
 package controller;
 
 import java.util.List;
-import model.BettingCalculator;
 import model.CardDispenser;
-import model.Cards;
-import model.Dealer;
-import model.Participants;
-import model.Player;
-import model.Players;
+import model.betting.BettingCalculator;
+import model.card.Cards;
+import model.participant.Dealer;
+import model.participant.Participants;
+import model.participant.Player;
+import model.participant.Players;
 import view.InputView;
 import view.OutputView;
 
