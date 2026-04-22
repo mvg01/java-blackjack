@@ -1,5 +1,6 @@
 package controller;
 
+import model.CardDispenser;
 import model.betting.BettingCalculator;
 import model.participant.Dealer;
 import model.participant.Participants;
@@ -11,9 +12,11 @@ public class BlackJackGame {
     private final BlackJackRound round;
     private final BettingCalculator bettingCalculator;
 
-    public BlackJackGame(BlackJackRound round, BettingCalculator bettingCalculator) {
-        this.round = round;
-        this.bettingCalculator = bettingCalculator;
+    public BlackJackGame(Players players) {
+        Dealer dealer = new Dealer();
+        CardDispenser dispenser = new CardDispenser();
+        bettingCalculator = new BettingCalculator();
+        round = new BlackJackRound(dealer, players, dispenser);
     }
 
     public void prepare() {

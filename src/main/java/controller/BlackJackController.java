@@ -1,8 +1,6 @@
 package controller;
 
 import java.util.List;
-import model.CardDispenser;
-import model.betting.BettingCalculator;
 import model.participant.Dealer;
 import model.participant.Participants;
 import model.participant.Player;
@@ -14,7 +12,7 @@ public class BlackJackController {
 
     public void run() {
         Players players = createPlayers();
-        BlackJackGame game = createGame(players);
+        BlackJackGame game = new BlackJackGame(players);
         startGame(game);
         finishGame(game);
     }
@@ -22,13 +20,6 @@ public class BlackJackController {
     private Players createPlayers() {
         List<String> names = InputView.readPlayerNames();
         return Players.from(names);
-    }
-
-    private BlackJackGame createGame(Players players) {
-        Dealer dealer = new Dealer();
-        CardDispenser dispenser = new CardDispenser();
-        BlackJackRound round = new BlackJackRound(dealer, players, dispenser);
-        return new BlackJackGame(round, new BettingCalculator());
     }
 
     private void startGame(BlackJackGame game) {
