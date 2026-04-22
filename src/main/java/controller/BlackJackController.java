@@ -3,7 +3,6 @@ package controller;
 import java.util.List;
 import model.CardDispenser;
 import model.betting.BettingCalculator;
-import model.card.Cards;
 import model.participant.Dealer;
 import model.participant.Participants;
 import model.participant.Player;
@@ -27,7 +26,7 @@ public class BlackJackController {
 
     private BlackJackGame createGame(Players players) {
         Dealer dealer = new Dealer();
-        CardDispenser dispenser = new CardDispenser(Cards.createShuffledDeck());
+        CardDispenser dispenser = new CardDispenser();
         BlackJackRound round = new BlackJackRound(dealer, players, dispenser);
         return new BlackJackGame(round, new BettingCalculator());
     }
