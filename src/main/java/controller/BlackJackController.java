@@ -1,9 +1,7 @@
 package controller;
 
 import java.util.List;
-import model.participant.Dealer;
 import model.participant.Participants;
-import model.participant.Player;
 import model.participant.Players;
 import view.InputView;
 import view.OutputView;
@@ -35,24 +33,19 @@ public class BlackJackController {
     }
 
     private void printInitialCards(BlackJackGame game) {
-        OutputView.printCardOpen(game.players());
-        OutputView.printCardByDealer(game.dealer());
-        game.players().players().forEach(OutputView::printCardByPlayer);
+        OutputView.printCardOpen(game.getPlayersNames());
+        OutputView.printCardByDealer(game.getDealerFirstCard(), game.getDealerName());
+        game.getPlayerSnapshots()
+                .forEach(s -> OutputView.printCardByPlayer(s.name(), s.cards()));
         OutputView.printBlank();
     }
 
     private void printFinalCards(BlackJackGame game) {
         OutputView.printBlank();
-        printDealerScore(game.dealer());
-        game.players().players().forEach(this::printPlayerScore);
-    }
-
-    private void printDealerScore(Dealer dealer) {
-        OutputView.printCardByPlayerWithScore(dealer, dealer.calculateTotalScore());
-    }
-
-    private void printPlayerScore(Player player) {
-        OutputView.printCardByPlayerWithScore(player, player.calculateTotalScore());
+        BlackJackGame.ParticipantSnapshot dealer = game.getDealerSnapshot();
+        OutputView.printCardByPlayerWithScore(dealer.name(), dealer.cards(), dealer.score());
+        game.getPlayerSnapshots()
+                .forEach(s -> OutputView.printCardByPlayerWithScore(s.name(), s.cards(), s.score()));
     }
 
     private void printResult(Participants result) {

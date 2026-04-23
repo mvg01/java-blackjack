@@ -54,7 +54,7 @@ public class Players {
     }
 
     private void printCardByPlayer(Player player) {
-        OutputView.printCardByPlayer(player);
+        OutputView.printCardByPlayer(player.name(), player.cards());
     }
 
     public List<Player> players() {

@@ -50,4 +50,11 @@ public class Cards {
                 .filter(Card::isAce)
                 .count();
     }
+
+    public Card getFirst() {
+        if (cards.isEmpty()) {
+            throw new IllegalStateException("딜러의 카드가 없습니다.");
+        }
+        return cards.getFirst();
+    }
 }

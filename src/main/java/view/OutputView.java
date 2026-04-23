@@ -2,43 +2,34 @@ package view;
 
 import java.util.List;
 import model.card.Card;
-import model.participant.AbstractParticipant;
 import model.participant.Dealer;
 import model.participant.Participant;
 import model.participant.Player;
-import model.participant.Players;
 
 public class OutputView {
 
-    public static void printCardOpen(Players players) {
-        List<String> names = players.players().stream()
-                .map(Player::name)
-                .toList();
+    public static void printCardOpen(List<String> names) {
         System.out.println();
         System.out.printf("딜러와 %s에게 2장을 나누었습니다.%n", String.join(", ", names));
     }
 
-    public static void printCardByDealer(Dealer dealer) {
-        Card firstCard = dealer.cards().getFirst();
+    public static void printCardByDealer(Card firstCard, String dealerName) {
         String card = convert(firstCard);
-        System.out.println(dealer.name() + "카드: " + card);
+        System.out.println(dealerName + "카드: " + card);
     }
 
-    public static void printCardByPlayer(Player player) {
-        List<String> cards = player.cards()
-                .stream()
+    public static void printCardByPlayer(String name, List<Card> cards) {
+        List<String> cardStrings = cards.stream()
                 .map(OutputView::convert)
                 .toList();
-        System.out.printf("%s카드: %s%n", player.name(), String.join(", ", cards));
+        System.out.printf("%s카드: %s%n", name, String.join(", ", cardStrings));
     }
 
-
-    public static void printCardByPlayerWithScore(AbstractParticipant player, int score) {
-        List<String> cards = player.cards()
-                .stream()
+    public static void printCardByPlayerWithScore(String name, List<Card> cards, int score) {
+        List<String> cardStrings = cards.stream()
                 .map(OutputView::convert)
                 .toList();
-        System.out.printf("%s카드: %s - 결과: %d%n", player.name(), String.join(", ", cards), score);
+        System.out.printf("%s카드: %s - 결과: %d%n", name, String.join(", ", cardStrings), score);
     }
 
     private static String convert(Card card) {
